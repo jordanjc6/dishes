@@ -30,8 +30,8 @@ export class DishesController {
     }
 
     @Delete("delete/:id")
-    async delete(@Param('id') id: number): Promise<any> {
-        return this.dishesService.delete(id);
+    delete(@Param('id') id): string {
+        return `this will delete dish ${id}`;//this.dishesService.delete(id);
     }
 
 }
