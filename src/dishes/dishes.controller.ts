@@ -23,15 +23,15 @@ export class DishesController {
         return this.dishesService.query(cuisine);
     }
 
-    @Patch("update/:id")
+    @Patch('update/:id')
     async update(@Param('id') id: number, @Body() dish: Dish): Promise<any> {
         dish.id = id
         return this.dishesService.update(dish);
     }
 
-    @Delete("delete/:id")
-    delete(@Param('id') id): string {
-        return `this will delete dish ${id}`;//this.dishesService.delete(id);
+    @Delete('delete/:id')
+    async delete(@Param('id') id): Promise<any> {
+        return this.dishesService.delete(id);
     }
 
 }
